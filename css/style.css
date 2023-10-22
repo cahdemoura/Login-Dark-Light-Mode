@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400&display=swap%27%29%3B');
+
+:root {
+    --color-light-50: #f8fafc;
+
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+
+    --color-purple-50: #7c3aed;
+    --color-purple-100: #a855f7;
+    --color-purple-200: #bf46ef;
+
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    background: var(--color-gradient);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form {
+    background: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 336);
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+
+#form_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#form_header h1 {
+    font-size: 40px;
+    position: relative;
+}
+
+#form_header h1::before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 5px;
+    background-color: var(--color-purple-50);
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+#mode-icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#social-media {
+    /*border: 1px solid rebeccapurple;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#social-media a {
+    /*border: 1px solid rebeccapurple;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-logo img {
+    color: #0efce8;
+}
+
+#social-media img {
+    width: 35px;
+}
+
+#social-media img:hover {
+    transform: scale(1.2);
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.inputbox label {
+    font-size: 14px;
+    color: var(--color-dark-50);
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--color-purple-50);
+}
+
+.input-field i {
+    font-size: 18px;
+    color: var(--color-dark-900);
+}
+
+.input-field input {
+    border: none;
+    background-color: transparent;
+    width: 250px;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+.input-field input:focus {
+    outline: none;
+}
+
+#forgot-password a {
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--color-dark-50);
+}
+
+#forgot-password a:hover {
+    color: var(--color-purple-50);
+}
+
+#login {
+    border: none;
+    background: var(--color-gradient);
+    color: var(--color-light-50);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+#login:hover {
+    /*transform: scale(1.05) 0.5s ease;*/
+    animation: login-animation 0.3s ease;
+    transform: scale(1.1);
+}
+
+#login:not(:hover){
+    animation: login-animation1 0.3s ease;
+    transform: scale(1.0);
+}
+
+
+@keyframes login-animation {
+    0% {
+        transform: scale(1.0)
+    }
+
+    100% {
+        transform: scale(1.1)
+    }
+}
+
+@keyframes login-animation1{
+    0% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1.0)
+    }
+
+
+}
+
+.dark#login-form {
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login-form .input-field input,
+.dark#login-form .input-field i {
+    color: var(--color-light-50);
+}
+
+@keyframes light-to-dark {
+    0% {
+        background-color: var(--color-dark-100);
+    }
+
+    100% {
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes dark-to-light {
+    0% {
+        background-color: var(--color-light-50);
+    }
+
+    100% {
+        background-color: var(--color-dark-100);
+    }
+}
